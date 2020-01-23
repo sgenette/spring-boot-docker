@@ -1,4 +1,4 @@
-FROM registry-all.docker.ing.net/openjdk:8-jre
+FROM openjdk:8-jre
 RUN addgroup --system spring && adduser --system spring --ingroup spring
 USER spring:spring
 ARG DEPENDENCY=target/dependency

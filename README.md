@@ -1,6 +1,6 @@
 This is a demo project for Spring Boot with Docker.
 
-Inspiration from https://spring.io/guides/gs/spring-boot-docker.\
+Inspiration from https://spring.io/guides/gs/spring-boot-docker. \
 More info at https://spring.io/guides/topicals/spring-boot-docker.
 
 ### 1. Build the application

@@ -17,5 +17,10 @@ Create, start and delete (on exit) a container with the image built in the previ
 
 `$ docker run -it --rm -p 5000:8080 sgenette/spring-boot-docker`
 
+Alternatively, use docker-compose to start/stop the container.
+
+`$ docker-compose up`\
+`$ docker-compose down`
+
 ### 3. Invoke the REST service
 http://localhost:5000/greeting?name=Simon

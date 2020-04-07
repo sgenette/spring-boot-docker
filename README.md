@@ -1,19 +1,21 @@
 This is a demo project for Spring Boot with Docker.
 
-Inspiration from https://spring.io/guides/gs/spring-boot-docker. \
-More info at https://spring.io/guides/topicals/spring-boot-docker.
+Inspiration from:
+* https://spring.io/guides/gs/spring-boot-docker
+* https://spring.io/guides/topicals/spring-boot-docker
+* https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices
 
-### 1. Build the application
-The Dockerfile contained in this project assumes that the fat JAR is already built.\
-`$ mvn clean package`
+### 1. Build the Docker image
+Use a multi-stage build to generate the Spring Boot artifact with Maven in a consistent way and by caching dependencies.
 
-### 2. Build the Docker image
-From project root directory:\
+From project root directory:
+
 `$ docker build -t sgenette/spring-boot-docker .`
 
-### 3. Run the container
-Create, start and delete (on exit) a container with the image built in the previous step.\
+### 2. Run the container
+Create, start and delete (on exit) a container with the image built in the previous step.
+
 `$ docker run -it --rm -p 5000:8080 sgenette/spring-boot-docker`
 
-### 4. Invoke the REST service
+### 3. Invoke the REST service
 http://localhost:5000/greeting?name=Simon

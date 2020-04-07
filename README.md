@@ -6,11 +6,15 @@ Inspiration from:
 * https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices
 
 ### 1. Build the Docker image
-From project root directory:\
+Use a multi-stage build to generate the Spring Boot artifact with Maven in a consistent way and by caching dependencies.
+
+From project root directory:
+
 `$ docker build -t sgenette/spring-boot-docker .`
 
 ### 2. Run the container
-Create, start and delete (on exit) a container with the image built in the previous step.\
+Create, start and delete (on exit) a container with the image built in the previous step.
+
 `$ docker run -it --rm -p 5000:8080 sgenette/spring-boot-docker`
 
 ### 3. Invoke the REST service

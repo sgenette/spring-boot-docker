@@ -1,7 +1,7 @@
 FROM maven:3.6-jdk-11-slim AS build
 WORKDIR /workspace
 COPY pom.xml .
-RUN mvn -e -B dependency:resolve
+RUN mvn -e -B dependency:go-offline
 COPY /src ./src
 RUN mvn -e -B package
 

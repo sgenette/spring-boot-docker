@@ -1,4 +1,4 @@
-FROM maven:3.8.6-eclipse-temurin-17-alpine AS build
+FROM maven:3-eclipse-temurin-17-alpine AS build
 WORKDIR /workspace
 COPY pom.xml .
 RUN mvn -e -B dependency:go-offline

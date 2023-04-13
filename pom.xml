@@ -18,6 +18,10 @@
         <java.version>17</java.version>
     </properties>
 
+    <scm>
+        <developerConnection>scm:git:https://github.com/sgenette/spring-boot-docker.git</developerConnection>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

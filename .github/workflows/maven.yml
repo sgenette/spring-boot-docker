@@ -36,8 +36,6 @@ jobs:
 
     - name: Release with Maven
       run: mvn -B release:prepare release:perform
-      with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph

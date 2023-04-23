@@ -3,6 +3,7 @@ This is a demo project for Spring Boot with Docker.
 Inspiration from:
 * https://spring.io/guides/gs/spring-boot-docker
 * https://spring.io/guides/topicals/spring-boot-docker
+* https://www.baeldung.com/docker-layers-spring-boot
 * https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices
 
 ### 1. Build the Docker image

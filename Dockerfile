@@ -1,15 +1,13 @@
-FROM maven:3-eclipse-temurin-17-alpine AS build
-WORKDIR /workspace
-COPY pom.xml .
-RUN mvn -e -B dependency:go-offline
-COPY /src ./src
-RUN mvn -e -B package
+FROM maven:3-eclipse-temurin-17-alpine AS builder
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} application.jar
+RUN java -Djarmode=layertools -jar application.jar extract
 
 FROM eclipse-temurin:17-jre-alpine
 RUN addgroup --system spring && adduser --system spring --ingroup spring
 USER spring:spring
-ARG DEPENDENCY=/workspace/target/dependency
-COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
-COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
-ENTRYPOINT ["java","-cp","app:app/lib/*","net.sgenette.springbootdocker.SpringBootDockerApplication"]
+COPY --from=builder dependencies/ ./
+COPY --from=builder snapshot-dependencies/ ./
+COPY --from=builder spring-boot-loader/ ./
+COPY --from=builder application/ ./
+ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]

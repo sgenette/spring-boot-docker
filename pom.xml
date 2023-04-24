@@ -97,7 +97,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <repository>sgenette/${project.artifactId}</repository>
+                            <repository>ghcr.io/sgenette/${project.artifactId}</repository>
                             <tag>${project.version}</tag>
                         </configuration>
                     </plugin>

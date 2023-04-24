@@ -100,6 +100,7 @@
                         <configuration>
                             <repository>ghcr.io/sgenette/${project.artifactId}</repository>
                             <tag>${project.version}</tag>
+                            <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
                         </configuration>
                     </plugin>
                 </plugins>

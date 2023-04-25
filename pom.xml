@@ -9,7 +9,7 @@
     </parent>
     <groupId>net.sgenette</groupId>
     <artifactId>spring-boot-docker</artifactId>
-    <version>0.12.0</version>
+    <version>0.13.0-SNAPSHOT</version>
     <name>spring-boot-docker</name>
     <description>Demo project for Spring Boot with Docker</description>
 
@@ -19,7 +19,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/sgenette/spring-boot-docker.git</developerConnection>
-        <tag>spring-boot-docker-0.12.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
